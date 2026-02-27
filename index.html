@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Story</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b0c1a;
+color:white;
+overflow-x:hidden;
+}
+
+/* ===== CINEMATIC 3D BACKGROUND ===== */
+
+.bg-wrapper{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-3;
+perspective:1000px;
+}
+
+.layer{
+position:absolute;
+width:120%;
+height:120%;
+top:-10%;
+left:-10%;
+background:radial-gradient(circle at 30% 40%, #2a0845, transparent 60%),
+           radial-gradient(circle at 70% 60%, #1f4068, transparent 60%);
+animation:moveLayer 20s infinite alternate ease-in-out;
+}
+
+.layer2{
+position:absolute;
+width:130%;
+height:130%;
+top:-15%;
+left:-15%;
+background:radial-gradient(circle at 60% 30%, #3a1c71, transparent 60%);
+opacity:0.6;
+animation:moveLayer2 25s infinite alternate ease-in-out;
+}
+
+@keyframes moveLayer{
+0%{transform:translateZ(-200px) scale(1);}
+100%{transform:translateZ(-100px) scale(1.1);}
+}
+
+@keyframes moveLayer2{
+0%{transform:translateZ(-300px) scale(1);}
+100%{transform:translateZ(-150px) scale(1.15);}
+}
+
+/* Floating Particles */
+
+.particle{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+opacity:0.5;
+animation:float 15s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+text-align:center;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(18px);
+padding:50px;
+border-radius:25px;
+max-width:750px;
+box-shadow:0 0 50px rgba(255,255,255,0.08);
+transform:perspective(1000px) rotateX(5deg);
+transition:0.8s;
+}
+
+.card:hover{
+transform:perspective(1000px) rotateX(0deg) scale(1.02);
+}
+
+/* Images */
+
+.card img{
+width:100%;
+max-height:280px;
+object-fit:cover;
+border-radius:20px;
+margin-bottom:25px;
+box-shadow:0 0 40px rgba(255,255,255,0.15);
+transition:0.6s;
+}
+
+.card img:hover{
+transform:scale(1.05);
+}
+
+/* Typography */
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:46px;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+p{
+font-size:19px;
+line-height:1.7;
+opacity:0.9;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff758c,#ff7eb3);
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+transition:0.4s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.final h1{
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #fff;}
+to{text-shadow:0 0 30px #ff7eb3;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg-wrapper">
+<div class="layer"></div>
+<div class="layer2"></div>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<section>
+<div class="card">
+<img src="anniversary.jpg">
+<h1>Happy 22nd ANNIVERSARY ❤️</h1>
+<p>To Mumma and Papa :)  
+A journey that continues to inspire every single day.</p>
+<button onclick="playMusic()">Begin Our Story</button>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section>
+<div class="card">
+<img src="wedding.jpg">
+<h1>💍 The Wedding</h1>
+<p>On 29th february, two souls promised forever —  
+and built the most beautiful life together.</p>
+</div>
+</section>
+
+<!-- PAGE 3 -->
+<section>
+<div class="card">
+<img src="mybirth.jpg">
+<h1>👶 My Birth</h1>
+<p>In 2005,another cutie added to the family making your blissful (hehehe).  
+The greatest blessing of my life is being your child.</p>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section>
+<div class="card">
+<img src="mom.jpg">
+<h1>💼 A Strong Woman</h1>
+<p>Mumma built her career as a professor (2010)...a big leap in her career —  
+balancing ambition and unconditional love.</p>
+</div>
+</section>
+
+<!-- PAGE 5 -->
+<section>
+<div class="card">
+<img src="sibling.jpg">
+<h1>👶 Another Blessing</h1>
+<p>In 2010, our family grew complete when badmash arrived in our lives,  
+filling it with laughter and beautiful memories.</p>
+</div>
+</section>
+
+<!-- FINAL PAGE -->
+<section class="final">
+<div class="card">
+<img src="final.jpg">
+<h1>Forever & Always</h1>
+<p>WISHING YOU BOTH MANY MANY MORE YEARS OF TOGETHERNESS N HAPPINESS...PLEASE MAINTAIN THE PEACE (Hehehe)...May u both achieve all u ever wished for n get all the happiness in the world n keep showering ur blessings upon us both</p>
+</div>
+</section>
+
+<script>
+
+function playMusic(){
+document.getElementById("bgMusic").play();
+}
+
+/* Floating particles */
+for(let i=0;i<90;i++){
+let p=document.createElement("div");
+p.className="particle";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=12+Math.random()*10+"s";
+document.body.appendChild(p);
+}
+
+</script>
+
+</body>
+</html>
